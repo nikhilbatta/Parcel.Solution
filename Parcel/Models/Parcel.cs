@@ -9,6 +9,7 @@ namespace Shipping.Models
         public int Length{get;set;}
         public int Width{get;set;}
         public int Height{get;set;} 
+        public bool Exists {get; set;}
 
          public int ID { get; }
         public  int totalPrice{get;set;}
@@ -23,6 +24,7 @@ namespace Shipping.Models
         Height = ParcelHeight;
         totalVolume = Volume();
         totalPrice= CostToShip();
+        Exists = true;
         
          ID = _instances.Count +1;
          
@@ -32,13 +34,13 @@ namespace Shipping.Models
     {
       return _instances;
     } 
-    public  int Volume()
+    public int Volume()
     {
         totalVolume =  Length * Width * Height;
         return totalVolume;
        
     }
-    public  int CostToShip()
+    public int CostToShip()
     {
         totalPrice =  totalVolume * Weight;
        return totalPrice;

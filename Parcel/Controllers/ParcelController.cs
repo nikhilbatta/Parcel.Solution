@@ -31,12 +31,26 @@ namespace Shipping.Controllers
         {
             return View();
         }
+        [HttpGet("/Error")]
+        public ActionResult ShowError()
+        {
+            return View();
+        }
 
          [HttpPost("/parcel/find")]
         public ActionResult ParcelSearchResult(int ID)
         {
-            Parcel foundParcel = Parcel.Find(ID);
-            return View(foundParcel);
+            
+            List<Parcel> count = Parcel.GetAll();
+            if(ID <= count.Count)
+            {
+                Parcel foundParcel = Parcel.Find(ID);
+                return View(foundParcel);
+            }
+            else
+            {
+                 return RedirectToAction("ShowError");
+            }
         }
     }
 }
