@@ -1,0 +1,13 @@
+@using Shipping.Models;
+@using System.IO;
+
+<h1>Parcel Volume and CostToShip</h1>
+@foreach (var item in Model)
+{
+     <li> Parcel ID: @item.ID</li>
+    <li> Volume of Parcel: @item.returnVolume()</li>
+    <li> Cost of Parcel: @item.returnPrice()</li>
+}
+
+<a href='/parcels/new'>Add a new parcel</a>
+<a href='/findParcels'>Find package by ID</a>

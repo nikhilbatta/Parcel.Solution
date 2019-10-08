@@ -1,0 +1,10 @@
+@using Shipping.Models;
+@using System.IO;
+
+<h1>Parcel Volume and CostToShip</h1>
+<li> Parcel ID: @Model.ID</li>
+<li> Total Volume: @Model.Height</li>
+<li> Total Price: @Model.Width</li>
+
+<a href='/parcels/new'>Add a new parcel</a>
+<a href='/parcels'>See list of parcels</a>
