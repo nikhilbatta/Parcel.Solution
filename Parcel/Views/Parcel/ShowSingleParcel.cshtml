@@ -3,10 +3,17 @@
 
 <link href="~/css/styles.css" rel="stylesheet" type="text/css" />
 
-
+<body>
 <h1>Parcel Volume and CostToShip</h1>
-<li> Total Volume: @Parcel.totalVolume</li>
-<li> Total Price: @Parcel.totalPrice</li>
+<li> Total Volume: @Model.totalVolume</li>
+<li> Total Price: @Model.totalPrice</li>
 
-<a href='/parcels/new'>Add a new parcel</a>
-<a href='/parcels'>See list of parcels</a>
+<div>
+<a href='/parcels/new'><h3>Add a new parcel</h3></a>
+</div>
+<div>
+<a href='/parcels'><h3>See list of parcels</h3></a>
+</div>
+
+
+</body>

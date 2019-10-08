@@ -3,11 +3,16 @@
 
 <link href="~/css/styles.css" rel="stylesheet" type="text/css" />
 
-
+<body>
 <h1>Found Parcel</h1>
 <li> Parcel ID: @Model.ID</li>
 <li> Total Volume: @Model.returnVolume()</li>
-<li> Total Price: $ @Model.returnPrice()</li>
+<li> Total Price: $ @Model.returnPrice()</li><br>
 
-<a href='/parcels/new'>Add a new parcel</a>
-<a href='/parcels'>See list of parcels</a>
+<div>
+<a href='/parcels/new'><h3>Add a new parcel</h3></a>
+</div>
+<div>
+<a href='/parcels'><h3>See list of parcels</h3></a>
+</div>
+</body>

@@ -11,8 +11,8 @@ namespace Shipping.Models
         public int Height{get;set;} 
 
          public int ID { get; }
-        public static int totalPrice{get;set;}
-        public static int totalVolume{get;set;}
+        public  int totalPrice{get;set;}
+        public  int totalVolume{get;set;}
         private static List<Parcel> _instances = new List<Parcel>{};
     
     public Parcel(int ParcelWeight, int ParcelLength, int ParcelWidth, int ParcelHeight)
@@ -21,34 +21,27 @@ namespace Shipping.Models
         Length = ParcelLength;
         Width = ParcelWidth;
         Height = ParcelHeight;
-        totalPrice= 0;
-        totalVolume = 0;
+        totalVolume = Volume();
+        totalPrice= CostToShip();
+        
          ID = _instances.Count +1;
+         
         _instances.Add(this);
     }
     public static List<Parcel> GetAll()
     {
       return _instances;
     } 
-    public void Volume()
+    public  int Volume()
     {
         totalVolume =  Length * Width * Height;
+        return totalVolume;
        
     }
-    public void CostToShip()
+    public  int CostToShip()
     {
         totalPrice =  totalVolume * Weight;
-       
-    }
-
-    public int returnVolume()
-    {
-         return totalVolume;
-    }
-
-    public int returnPrice()
-    {
-         return totalPrice;
+       return totalPrice;
     }
 
     public static Parcel Find(int searchId)

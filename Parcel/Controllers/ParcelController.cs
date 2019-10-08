@@ -22,8 +22,7 @@ namespace Shipping.Controllers
         public ActionResult ShowSingleParcel(int ParcelWeight, int ParcelHeight, int ParcelLength, int ParcelWidth)
         {
             Parcel myParcel = new Parcel(ParcelWeight,ParcelHeight,ParcelLength,ParcelWidth);
-            myParcel.Volume();
-            myParcel.CostToShip();
+         
             return View(myParcel);
         }
 
